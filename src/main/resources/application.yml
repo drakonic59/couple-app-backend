@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/couple_app
+    username: couple_app
+    password: couple_app
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+  flyway:
+    enabled: true
+
+server:
+  error:
+    include-message: always
+
+app:
+  security:
+    jwt:
+      issuer: couple-app-backend
+      access-token-ttl-minutes: 15
+      refresh-token-ttl-days: 30
+      secret: "change-me-super-long-random-string-please"
